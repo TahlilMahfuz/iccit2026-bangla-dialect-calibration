@@ -1,0 +1,4 @@
+dialect,jaccard_vs_standard,vocab_size,shared_tokens
+barishal,0.2988288242213471,10034,5843
+noakhali,0.26885656970912736,9939,5361
+chittagong,0.14513020483169736,10187,3238
