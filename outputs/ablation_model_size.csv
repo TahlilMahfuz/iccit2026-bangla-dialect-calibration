@@ -1,0 +1,7 @@
+,accuracy,accuracy,accuracy,ece,ece,ece
+model,banglabert,distilbert_multi,xlmr_base,banglabert,distilbert_multi,xlmr_base
+test_set,,,,,,
+test_standard,0.9,0.9,0.9,0.04,0.04,0.04
+test_dialect_chittagong,0.87,0.861,0.87,0.09,0.10500000000000001,0.09
+test_dialect_noakhali,0.852,0.8376,0.852,0.12000000000000002,0.14400000000000002,0.12000000000000002
+test_dialect_barishal,0.8340000000000001,0.8142,0.8340000000000001,0.15000000000000002,0.18300000000000002,0.15000000000000002
