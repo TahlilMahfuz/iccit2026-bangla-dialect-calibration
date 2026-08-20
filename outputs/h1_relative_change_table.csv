@@ -1,0 +1,7 @@
+model,test_set,accuracy_drop_rel,ece_increase_rel,H1_supported
+banglabert,test_dialect_chittagong,0.0915472194883959,1.5691660212195104,True
+banglabert,test_dialect_noakhali,0.02030513268670728,0.2090241281713961,True
+banglabert,test_dialect_barishal,0.01184733527105299,0.27626088974972834,True
+xlmr_base,test_dialect_chittagong,0.09149451511303394,0.7852234295561463,True
+xlmr_base,test_dialect_noakhali,0.023260874476568872,-0.2884471761462197,False
+xlmr_base,test_dialect_barishal,0.016407830390547697,0.09859302846485483,True
