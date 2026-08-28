@@ -63,10 +63,10 @@ seed=42. Hardware: Kaggle T4.]
 | xlmr_base        | test_dialect_chittagong | pre_calibration |   0.819935 | 0.0981792 | 0.331805 | 0.140103  | 0.474296 |
 | xlmr_base        | test_dialect_noakhali   | pre_calibration |   0.889905 | 0.0587829 | 0.346131 | 0.0887271 | 0.30812  |
 | xlmr_base        | test_dialect_barishal   | pre_calibration |   0.903953 | 0.0497949 | 0.337296 | 0.0767471 | 0.2755   |
-| distilbert_multi | test_standard           | pre_calibration |   0.90177  | 0.0325929 | 0.10958  | 0.0745611 | 0.253123 |
-| distilbert_multi | test_dialect_chittagong | pre_calibration |   0.829467 | 0.0810441 | 0.248078 | 0.132982  | 0.442318 |
-| distilbert_multi | test_dialect_noakhali   | pre_calibration |   0.884678 | 0.0421291 | 0.209553 | 0.086194  | 0.292634 |
-| distilbert_multi | test_dialect_barishal   | pre_calibration |   0.888272 | 0.042153  | 0.235124 | 0.0875662 | 0.29957  |
+| distilbert_multi | test_standard           | pre_calibration |   0.897992 | 0.0400682 | 0.337487 | 0.0759757 | 0.256497 |
+| distilbert_multi | test_dialect_chittagong | pre_calibration |   0.831101 | 0.0708861 | 0.188866 | 0.131364  | 0.434292 |
+| distilbert_multi | test_dialect_noakhali   | pre_calibration |   0.872917 | 0.0637751 | 0.376834 | 0.094069  | 0.312059 |
+| distilbert_multi | test_dialect_barishal   | pre_calibration |   0.876184 | 0.0590938 | 0.434947 | 0.0920161 | 0.307779 |
 
 [M4: state explicitly whether ECE increased proportionally more than accuracy dropped, per model, per
 dialect — pull from Role 3's `h1_relative_change_table.csv`.]
@@ -74,26 +74,26 @@ dialect — pull from Role 3's `h1_relative_change_table.csv`.]
 ### 5.3 Does post-hoc calibration recover safe behavior without dialect data? (H2)
 | model            | test_set                | method       |   ece_reduction |   ece_pre |   ece_post |
 |:-----------------|:------------------------|:-------------|----------------:|----------:|-----------:|
-| banglabert       | test_standard           | temp_scaling |       0.0165296 | 0.0376348 |  0.0211052 |
-| banglabert       | test_dialect_chittagong | temp_scaling |       0.0250528 | 0.086264  |  0.0612112 |
-| banglabert       | test_dialect_noakhali   | temp_scaling |       0.019588  | 0.0477108 |  0.0281228 |
-| banglabert       | test_dialect_barishal   | temp_scaling |       0.01895   | 0.0420763 |  0.0231263 |
-| banglabert       | test_standard           | dirichlet    |       0.0194162 | 0.0376348 |  0.0182185 |
-| banglabert       | test_dialect_chittagong | dirichlet    |       0.0297582 | 0.086264  |  0.0565058 |
-| banglabert       | test_dialect_noakhali   | dirichlet    |       0.0168765 | 0.0477108 |  0.0308343 |
-| banglabert       | test_dialect_barishal   | dirichlet    |       0.0195983 | 0.0420763 |  0.022478  |
-| xlmr_base        | test_standard           | temp_scaling |       0.0203829 | 0.0417369 |  0.0213541 |
-| xlmr_base        | test_dialect_chittagong | temp_scaling |       0.0196251 | 0.0981792 |  0.0785541 |
-| xlmr_base        | test_dialect_noakhali   | temp_scaling |       0.0181483 | 0.0587829 |  0.0406346 |
-| xlmr_base        | test_dialect_barishal   | temp_scaling |       0.0181457 | 0.0497949 |  0.0316493 |
-| xlmr_base        | test_standard           | dirichlet    |       0.0254915 | 0.0417369 |  0.0162455 |
-| xlmr_base        | test_dialect_chittagong | dirichlet    |       0.0300986 | 0.0981792 |  0.0680806 |
-| xlmr_base        | test_dialect_noakhali   | dirichlet    |       0.0235679 | 0.0587829 |  0.0352149 |
-| xlmr_base        | test_dialect_barishal   | dirichlet    |       0.0298604 | 0.0497949 |  0.0199345 |
-| distilbert_multi | test_standard           | temp_scaling |       0.0136774 | 0.0325929 |  0.0189155 |
-| distilbert_multi | test_dialect_chittagong | temp_scaling |       0.0214756 | 0.0810441 |  0.0595685 |
-| distilbert_multi | test_dialect_noakhali   | temp_scaling |       0.0152682 | 0.0421291 |  0.0268609 |
-| distilbert_multi | test_dialect_barishal   | temp_scaling |       0.0164743 | 0.042153  |  0.0256787 |
+| banglabert       | test_standard           | temp_scaling |      0.0165296  | 0.0376348 |  0.0211052 |
+| banglabert       | test_dialect_chittagong | temp_scaling |      0.0250528  | 0.086264  |  0.0612112 |
+| banglabert       | test_dialect_noakhali   | temp_scaling |      0.019588   | 0.0477108 |  0.0281228 |
+| banglabert       | test_dialect_barishal   | temp_scaling |      0.01895    | 0.0420763 |  0.0231263 |
+| banglabert       | test_standard           | dirichlet    |      0.0194162  | 0.0376348 |  0.0182185 |
+| banglabert       | test_dialect_chittagong | dirichlet    |      0.0297582  | 0.086264  |  0.0565058 |
+| banglabert       | test_dialect_noakhali   | dirichlet    |      0.0168765  | 0.0477108 |  0.0308343 |
+| banglabert       | test_dialect_barishal   | dirichlet    |      0.0195983  | 0.0420763 |  0.022478  |
+| xlmr_base        | test_standard           | temp_scaling |      0.0203829  | 0.0417369 |  0.0213541 |
+| xlmr_base        | test_dialect_chittagong | temp_scaling |      0.0196251  | 0.0981792 |  0.0785541 |
+| xlmr_base        | test_dialect_noakhali   | temp_scaling |      0.0181483  | 0.0587829 |  0.0406346 |
+| xlmr_base        | test_dialect_barishal   | temp_scaling |      0.0181457  | 0.0497949 |  0.0316493 |
+| xlmr_base        | test_standard           | dirichlet    |      0.0254915  | 0.0417369 |  0.0162455 |
+| xlmr_base        | test_dialect_chittagong | dirichlet    |      0.0300986  | 0.0981792 |  0.0680806 |
+| xlmr_base        | test_dialect_noakhali   | dirichlet    |      0.0235679  | 0.0587829 |  0.0352149 |
+| xlmr_base        | test_dialect_barishal   | dirichlet    |      0.0298604  | 0.0497949 |  0.0199345 |
+| distilbert_multi | test_standard           | temp_scaling |      0.00283358 | 0.0400682 |  0.0372346 |
+| distilbert_multi | test_dialect_chittagong | temp_scaling |      0.0132218  | 0.0708861 |  0.0576642 |
+| distilbert_multi | test_dialect_noakhali   | temp_scaling |      0.00137678 | 0.0637751 |  0.0623984 |
+| distilbert_multi | test_dialect_barishal   | temp_scaling |      0.0118942  | 0.0590938 |  0.0471996 |
 
 ### 5.4 Selective classification / risk-coverage (AURC)
 | model      | test_set                | stage           |      aurc |
@@ -144,34 +144,34 @@ gradient in accuracy drop / ECE increase — Spearman correlations computed in �
 | xlmr_base        | test_dialect_chittagong |   0.819935 | 0.0981792 |
 | xlmr_base        | test_dialect_noakhali   |   0.889905 | 0.0587829 |
 | xlmr_base        | test_dialect_barishal   |   0.903953 | 0.0497949 |
-| distilbert_multi | test_standard           |   0.90177  | 0.0325929 |
-| distilbert_multi | test_dialect_chittagong |   0.829467 | 0.0810441 |
-| distilbert_multi | test_dialect_noakhali   |   0.884678 | 0.0421291 |
-| distilbert_multi | test_dialect_barishal   |   0.888272 | 0.042153  |
+| distilbert_multi | test_standard           |   0.897992 | 0.0400682 |
+| distilbert_multi | test_dialect_chittagong |   0.831101 | 0.0708861 |
+| distilbert_multi | test_dialect_noakhali   |   0.872917 | 0.0637751 |
+| distilbert_multi | test_dialect_barishal   |   0.876184 | 0.0590938 |
 
 ### 6.3 Calibration-method ablation
 | model            | test_set                | method       |   ece_reduction |   ece_pre |   ece_post |
 |:-----------------|:------------------------|:-------------|----------------:|----------:|-----------:|
-| banglabert       | test_standard           | temp_scaling |       0.0165296 | 0.0376348 |  0.0211052 |
-| banglabert       | test_dialect_chittagong | temp_scaling |       0.0250528 | 0.086264  |  0.0612112 |
-| banglabert       | test_dialect_noakhali   | temp_scaling |       0.019588  | 0.0477108 |  0.0281228 |
-| banglabert       | test_dialect_barishal   | temp_scaling |       0.01895   | 0.0420763 |  0.0231263 |
-| banglabert       | test_standard           | dirichlet    |       0.0194162 | 0.0376348 |  0.0182185 |
-| banglabert       | test_dialect_chittagong | dirichlet    |       0.0297582 | 0.086264  |  0.0565058 |
-| banglabert       | test_dialect_noakhali   | dirichlet    |       0.0168765 | 0.0477108 |  0.0308343 |
-| banglabert       | test_dialect_barishal   | dirichlet    |       0.0195983 | 0.0420763 |  0.022478  |
-| xlmr_base        | test_standard           | temp_scaling |       0.0203829 | 0.0417369 |  0.0213541 |
-| xlmr_base        | test_dialect_chittagong | temp_scaling |       0.0196251 | 0.0981792 |  0.0785541 |
-| xlmr_base        | test_dialect_noakhali   | temp_scaling |       0.0181483 | 0.0587829 |  0.0406346 |
-| xlmr_base        | test_dialect_barishal   | temp_scaling |       0.0181457 | 0.0497949 |  0.0316493 |
-| xlmr_base        | test_standard           | dirichlet    |       0.0254915 | 0.0417369 |  0.0162455 |
-| xlmr_base        | test_dialect_chittagong | dirichlet    |       0.0300986 | 0.0981792 |  0.0680806 |
-| xlmr_base        | test_dialect_noakhali   | dirichlet    |       0.0235679 | 0.0587829 |  0.0352149 |
-| xlmr_base        | test_dialect_barishal   | dirichlet    |       0.0298604 | 0.0497949 |  0.0199345 |
-| distilbert_multi | test_standard           | temp_scaling |       0.0136774 | 0.0325929 |  0.0189155 |
-| distilbert_multi | test_dialect_chittagong | temp_scaling |       0.0214756 | 0.0810441 |  0.0595685 |
-| distilbert_multi | test_dialect_noakhali   | temp_scaling |       0.0152682 | 0.0421291 |  0.0268609 |
-| distilbert_multi | test_dialect_barishal   | temp_scaling |       0.0164743 | 0.042153  |  0.0256787 |
+| banglabert       | test_standard           | temp_scaling |      0.0165296  | 0.0376348 |  0.0211052 |
+| banglabert       | test_dialect_chittagong | temp_scaling |      0.0250528  | 0.086264  |  0.0612112 |
+| banglabert       | test_dialect_noakhali   | temp_scaling |      0.019588   | 0.0477108 |  0.0281228 |
+| banglabert       | test_dialect_barishal   | temp_scaling |      0.01895    | 0.0420763 |  0.0231263 |
+| banglabert       | test_standard           | dirichlet    |      0.0194162  | 0.0376348 |  0.0182185 |
+| banglabert       | test_dialect_chittagong | dirichlet    |      0.0297582  | 0.086264  |  0.0565058 |
+| banglabert       | test_dialect_noakhali   | dirichlet    |      0.0168765  | 0.0477108 |  0.0308343 |
+| banglabert       | test_dialect_barishal   | dirichlet    |      0.0195983  | 0.0420763 |  0.022478  |
+| xlmr_base        | test_standard           | temp_scaling |      0.0203829  | 0.0417369 |  0.0213541 |
+| xlmr_base        | test_dialect_chittagong | temp_scaling |      0.0196251  | 0.0981792 |  0.0785541 |
+| xlmr_base        | test_dialect_noakhali   | temp_scaling |      0.0181483  | 0.0587829 |  0.0406346 |
+| xlmr_base        | test_dialect_barishal   | temp_scaling |      0.0181457  | 0.0497949 |  0.0316493 |
+| xlmr_base        | test_standard           | dirichlet    |      0.0254915  | 0.0417369 |  0.0162455 |
+| xlmr_base        | test_dialect_chittagong | dirichlet    |      0.0300986  | 0.0981792 |  0.0680806 |
+| xlmr_base        | test_dialect_noakhali   | dirichlet    |      0.0235679  | 0.0587829 |  0.0352149 |
+| xlmr_base        | test_dialect_barishal   | dirichlet    |      0.0298604  | 0.0497949 |  0.0199345 |
+| distilbert_multi | test_standard           | temp_scaling |      0.00283358 | 0.0400682 |  0.0372346 |
+| distilbert_multi | test_dialect_chittagong | temp_scaling |      0.0132218  | 0.0708861 |  0.0576642 |
+| distilbert_multi | test_dialect_noakhali   | temp_scaling |      0.00137678 | 0.0637751 |  0.0623984 |
+| distilbert_multi | test_dialect_barishal   | temp_scaling |      0.0118942  | 0.0590938 |  0.0471996 |
 
 ## Limitations
 

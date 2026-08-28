@@ -1,0 +1,5 @@
+model,outcome,spearman_rho,exact_permutation_p,n_dialects
+banglabert,accuracy_drop,-1.0,0.3333333333333333,3
+banglabert,ece_increase,-1.0,0.3333333333333333,3
+xlmr_base,accuracy_drop,-1.0,0.3333333333333333,3
+xlmr_base,ece_increase,-1.0,0.3333333333333333,3
